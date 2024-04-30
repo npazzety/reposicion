@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
-
 
 @RestController
 @RequestMapping("/api/equipos")
@@ -29,8 +25,8 @@ public class EquiposController {
         return this.equiposServiceImpl.crearEquipos(equipo);
     }
 
-    @PutMapping("eliminar/{codigoEquipo}")
-    public String elimnarEquipo(@PathVariable int codigoEquipo, @RequestBody String entity) {        
+    @PutMapping("/eliminar/{codigoEquipo}")
+    public String elimnarEquipo(@PathVariable int codigoEquipo) {        
         return this.equiposServiceImpl.eliminarEquipo(codigoEquipo);
     }
 
